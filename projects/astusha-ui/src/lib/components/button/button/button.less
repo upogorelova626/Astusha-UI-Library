@@ -122,21 +122,21 @@
     }
 
     &[data-appearance='accent'] {
-        background: #fcd7ee;
-        color: #e83e8c;
+        background: var(--ast-color-accent);
+        color: var(--ast-color-accent-text);
 
         &:hover {
-            background: #fdcde7;
-            color: #d92f7d;
+            background: var(--ast-color-accent-hover);
+            color: var(--ast-color-accent-text-hover);
         }
 
         &:active {
-            background: #f6b6d8;
+            background: var(--ast-color-accent-active);
         }
 
         &:disabled {
-            background: #f3e8ef;
-            color: #d7a9c0;
+            background: var(--ast-color-accent-disabled);
+            color: var(--ast-color-accent-text-disabled);
         }
     }
 
@@ -196,15 +196,5 @@
             background: var(--ast-color-error-background);
             color: var(--ast-color-error-border);
         }
-    }
-
-    &[data-focus='true'][data-appearance='secondary'],
-    &[data-focus='true'][data-appearance='flat'],
-    &[data-focus='true'][data-appearance='accent'],
-    &[data-focus='true'][data-appearance='soft'],
-    &[data-focus='true'][data-appearance='tinted'],
-    &[data-focus='true'][data-appearance='primary'],
-    &[data-focus='true'][data-appearance='danger'] {
-        border: 2px solid var(--ast-color-text-primary);
     }
 }

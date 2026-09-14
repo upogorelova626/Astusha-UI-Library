@@ -1,13 +1,13 @@
 import {Directive, input} from '@angular/core';
 
 @Directive({
-    selector: '[astButtonLoading]',
+    selector: '[loading]',
     host: {
         class: 'ast-button',
 
-        '[attr.data-loading]': 'isLoading()'
+        '[attr.data-loading]': 'loading()'
     }
 })
 export class ButtonLoadingDirective {
-    readonly isLoading = input<boolean>(false);
+    readonly loading = input<boolean>(false);
 }

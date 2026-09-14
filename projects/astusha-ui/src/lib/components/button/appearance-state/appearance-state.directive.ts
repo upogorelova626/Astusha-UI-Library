@@ -1,8 +1,15 @@
-import {Directive} from '@angular/core';
+import {Directive, input} from '@angular/core';
+
+type AppearanceState = 'hover' | 'disabled' | 'active';
 
 @Directive({
-    selector: '[astAppearanceState]'
+    selector: '[astAppearanceState]',
+    host: {
+        class: 'ast-button',
+
+        '[attr.data-appearance-state]': 'astAppearanceState()'
+    }
 })
 export class AppearanceStateDirective {
-    constructor() {}
+    readonly astAppearanceState = input<AppearanceState | null>(null);
 }
