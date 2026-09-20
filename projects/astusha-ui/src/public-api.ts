@@ -19,3 +19,7 @@ export * from './lib/components/status/status.directive';
 //radio
 
 export * from './lib/form/toggles/radio/radio.directive';
+
+// checkbox
+
+export * from './lib/form/toggles/checkbox/checkbox.directive';

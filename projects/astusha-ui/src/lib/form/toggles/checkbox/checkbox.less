@@ -1,0 +1,145 @@
+.ast-checkbox {
+    appearance: none;
+
+    display: inline-grid;
+    place-content: center;
+
+    margin: 0;
+
+    border: 0.5px solid rgba(27, 31, 59, 0.1);
+    background-color: transparent;
+
+    box-shadow: rgba(27, 31, 59, 0.1) 0 0 0 1px inset;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+
+    &[data-size='s'] {
+        width: 16px;
+        height: 16px;
+
+        border-radius: 4px;
+
+        &::before {
+            width: 4px;
+            height: 7px;
+        }
+    }
+
+    &[data-size='m'] {
+        width: 20px;
+        height: 20px;
+
+        border-radius: 6px;
+
+        &::before {
+            width: 5px;
+            height: 9px;
+        }
+    }
+
+    &[data-size='l'] {
+        width: 24px;
+        height: 24px;
+
+        border-radius: 8px;
+
+        &::before {
+            width: 6px;
+            height: 11px;
+        }
+    }
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+
+        border: solid white;
+        border-width: 0 2px 2px 0;
+
+        transform: translate(-50%, -55%) rotate(45deg) scale(0);
+
+        transition: transform 0.15s ease;
+    }
+
+    &:checked {
+        border: none;
+
+        background-color: rgb(82, 110, 211);
+        box-shadow: none;
+    }
+
+    &:checked::before {
+        transform: rotate(45deg) scale(1);
+    }
+
+    &:indeterminate {
+        border: none;
+
+        background-color: rgb(82, 110, 211);
+        box-shadow: none;
+    }
+
+    &:indeterminate::before {
+        width: 50%;
+        height: 2px;
+
+        border: 0;
+
+        background-color: white;
+
+        transform: scale(1);
+    }
+
+    &:hover:not(:disabled):not(:checked):not(:indeterminate) {
+        border-color: rgba(27, 31, 59, 0.16);
+
+        box-shadow: rgba(27, 31, 59, 0.16) 0 0 0 1px inset;
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &[data-invalid='true']:hover:not(:disabled) {
+        box-shadow: rgba(245, 34, 34, 0.16) 0 0 0 1px inset;
+    }
+
+    &[data-invalid='true']:checked {
+        border: none;
+
+        background-color: rgb(255, 42, 26);
+    }
+
+    &[data-invalid='true']:indeterminate {
+        border: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+
+        border-color: #9dade6;
+        box-shadow: none;
+    }
+
+    &:disabled:checked {
+        border: none;
+
+        background-color: #9dade6;
+    }
+
+    &:disabled:indeterminate {
+        border: none;
+
+        background-color: #9dade6;
+    }
+}
