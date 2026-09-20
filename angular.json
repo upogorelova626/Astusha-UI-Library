@@ -62,6 +62,11 @@
               {
                 "glob": "**/*",
                 "input": "projects/demo/public"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/lucide-static/icons",
+                "output": "assets/astusha-ui/icons"
               }
             ],
             "styles": ["projects/demo/src/styles.less"],
