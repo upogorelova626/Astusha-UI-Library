@@ -6,15 +6,14 @@
 
     margin: 0;
 
-    border: 0.5px solid var(--ast-color-border);
+    border: 0.5px solid var(--ast-border-normal);
     border-radius: 50%;
 
     cursor: pointer;
 
     transition:
-        border-color 0 ease,
-        border-width 0 ease,
-        box-shadow 0 ease;
+        border-color 0.15s ease,
+        border-width 0.15s ease;
 
     &[data-size='s'] {
         width: 16px;
@@ -44,42 +43,44 @@
     }
 
     &:checked {
-        border-color: var(--ast-color-primary);
+        border-color: var(--ast-background-accent-1);
     }
 
-    &:hover:not(:disabled) {
-        border-color: var(--ast-color-primary);
+    &:hover:not(:disabled):not([data-invalid='true']) {
+        border-color: var(--ast-background-accent-1-hover);
+    }
+
+    &:active:not(:disabled):not([data-invalid='true']) {
+        border-color: var(--ast-background-accent-1-pressed);
+    }
+
+    &[data-invalid='true']:not(:disabled):not(:checked) {
+        border-color: var(--ast-status-negative-pale-hover);
+    }
+
+    &[data-invalid='true']:checked {
+        border-color: var(--ast-status-negative);
+    }
+
+    &[data-invalid='true']:hover:not(:disabled) {
+        border-color: var(--ast-text-negative-hover);
+    }
+
+    &[data-invalid='true']:active:not(:disabled) {
+        border-color: var(--ast-status-negative);
     }
 
     &:focus-visible {
         outline: none;
-
-        box-shadow: 0 0 0 3px var(--ast-color-focus);
-    }
-
-    &[data-invalid='true'] {
-        border-color: var(--ast-color-error);
-
-        &:checked {
-            border-color: var(--ast-color-error);
-        }
-
-        &:focus-visible {
-            box-shadow: 0 0 0 3px var(--ast-color-error-background);
-        }
     }
 
     &:disabled {
         cursor: not-allowed;
 
-        border-color: var(--ast-color-border-light);
-
-        background-color: var(--ast-color-disabled-background);
-
-        opacity: 0.7;
+        border-color: var(--ast-border-normal);
     }
 
     &:disabled:checked {
-        border-color: var(--ast-color-disabled-text);
+        border-color: #9dade6;
     }
 }
