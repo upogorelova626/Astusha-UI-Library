@@ -1,1 +1,19 @@
-<input type="button" [formControl]="control" />
+<input type="checkbox" [formControl]="control" astSwitch size="m" />
+
+<input type="checkbox" [formControl]="control" astSwitch size="s" />
+
+<input
+    type="checkbox"
+    [formControl]="control"
+    astSwitch
+    size="m"
+    [invalid]="true"
+/>
+
+<input
+    type="checkbox"
+    [formControl]="control"
+    astSwitch
+    size="s"
+    [invalid]="true"
+/>

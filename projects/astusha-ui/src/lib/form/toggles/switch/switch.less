@@ -1,0 +1,211 @@
+.ast-switch {
+    appearance: none;
+
+    position: relative;
+
+    display: inline-grid;
+    place-content: center;
+
+    margin: 0;
+
+    border: none;
+    border-radius: 32px;
+
+    background-color: #ebebeb;
+
+    cursor: pointer;
+
+    transition-duration: 0.15s;
+    transition-property: background, box-shadow;
+    transition-timing-function: cubic-bezier(0.2, 0, 0.4, 0.9);
+
+    -webkit-tap-highlight-color: transparent;
+
+    // Большой белый кружок-бегунок
+    &::before {
+        content: '';
+
+        position: absolute;
+
+        border-radius: 50%;
+
+        background-color: white;
+
+        transition: transform 0.15s ease;
+    }
+
+    // Размер M
+    &[data-size='m'] {
+        width: 48px;
+        height: 24px;
+
+        // Размер и положение большого кружка
+        &::before {
+            top: 4px;
+            left: 4px;
+
+            width: 16px;
+            height: 16px;
+        }
+
+        // Checked: большой кружок уезжает вправо
+        &:checked::before {
+            transform: translateX(24px);
+            mask-image: var(--ast-check-icon);
+        }
+
+        // Unchecked + showIcons:
+        // маленький кружок справа
+        &[data-show-icons='true']::after {
+            right: 9px;
+
+            width: 9px;
+            height: 9px;
+        }
+
+        // Checked + showIcons:
+        // вместо маленького кружка показываем галочку слева
+        &[data-show-icons='true']:checked::after {
+            right: auto;
+            left: 6px;
+
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    // Размер S
+    &[data-size='s'] {
+        width: 32px;
+        height: 16px;
+
+        // Размер и положение большого кружка
+        &::before {
+            top: 2px;
+            left: 2px;
+
+            width: 12px;
+            height: 12px;
+        }
+
+        // Checked: большой кружок уезжает вправо
+        &:checked::before {
+            transform: translateX(16px);
+        }
+
+        // Unchecked + showIcons:
+        // маленький кружок справа
+        &[data-show-icons='true']::after {
+            right: 6px;
+
+            width: 4px;
+            height: 4px;
+        }
+
+        // Checked + showIcons:
+        // галочка слева
+        &[data-show-icons='true']:checked::after {
+            right: auto;
+            left: 4px;
+
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    // Иконки включены + switch не checked:
+    // рисуем маленький кружок справа
+    &[data-show-icons='true']::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+
+        box-sizing: border-box;
+
+        border: 1px solid #ebebeb;
+        border-radius: 50%;
+
+        transform: translateY(-50%);
+    }
+
+    // Иконки включены + switch checked:
+    // превращаем ::after из кружка в галочку
+    &[data-show-icons='true']:checked::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+
+        background-color: white;
+
+        mask-image: var(--ast-check-icon);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+
+        transform: translateY(-50%);
+    }
+
+    // Unchecked + valid + enabled
+    // обычное состояние
+    &:not(:checked):not(:disabled):not([data-invalid='true']) {
+        background-color: #ebebeb;
+    }
+
+    // Unchecked + valid + enabled + hover
+    &:not(:checked):hover:not(:disabled):not([data-invalid='true']) {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    // Unchecked + valid + enabled + active
+    &:not(:checked):active:not(:disabled):not([data-invalid='true']) {
+        background-color: rgba(0, 0, 0, 0.14);
+    }
+
+    // Checked + valid + enabled
+    // обычное состояние
+    &:checked:not(:disabled):not([data-invalid='true']) {
+        background-color: var(--ast-background-accent-1);
+    }
+
+    // Checked + valid + enabled + hover
+    &:checked:hover:not(:disabled):not([data-invalid='true']) {
+        background-color: var(--ast-background-accent-1-hover);
+    }
+
+    // Checked + valid + enabled + active
+    &:checked:active:not(:disabled):not([data-invalid='true']) {
+        background-color: var(--ast-background-accent-1-pressed);
+    }
+
+    // Invalid + enabled
+    // одинаковый цвет и для checked, и для unchecked
+    &[data-invalid='true']:not(:disabled) {
+        background-color: var(--ast-status-negative);
+    }
+
+    // Invalid + enabled + hover / active
+    // цвет специально не меняется
+    &[data-invalid='true']:hover:not(:disabled),
+    &[data-invalid='true']:active:not(:disabled) {
+        background-color: var(--ast-status-negative);
+    }
+
+    // Disabled + unchecked
+    &:disabled {
+        cursor: not-allowed;
+
+        background-color: #ebebeb;
+    }
+
+    // Disabled + checked
+    &:disabled:checked {
+        background-color: #9dade6;
+    }
+
+    // Убираем стандартный outline браузера при focus-visible
+    &:focus-visible {
+        outline: none;
+    }
+}

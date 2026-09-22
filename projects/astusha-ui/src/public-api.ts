@@ -6,6 +6,9 @@ export * from './lib/components/button/appearance-focus/appearance-focus.directi
 
 export * from './lib/components/button/appearance-state/appearance-state.directive';
 
+export * from './lib/directives/appearance.directive';
+export * from './lib/directives/control-state.directive';
+
 //inputs
 
 //badges
@@ -23,3 +26,7 @@ export * from './lib/form/toggles/radio/radio.directive';
 // checkbox
 
 export * from './lib/form/toggles/checkbox/checkbox.directive';
+
+//switch
+
+export * from './lib/form/toggles/switch/switch.directive';

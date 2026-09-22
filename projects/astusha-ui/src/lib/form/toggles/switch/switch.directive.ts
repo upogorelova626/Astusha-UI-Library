@@ -3,26 +3,26 @@ import {Directive, inject, input} from '@angular/core';
 import {AST_ICON_RESOLVER} from '../../../icons/icon-resolver';
 import {ControlStateDirective} from '../../../directives/control-state.directive';
 
-type CheckboxSize = 's' | 'm' | 'l';
+type SwitchSize = 's' | 'm';
 
 @Directive({
-    selector: 'input[type=checkbox][astCheckbox]',
+    selector: 'input[type=checkbox][astSwitch]',
     hostDirectives: [{directive: ControlStateDirective, inputs: ['invalid']}],
+
     host: {
-        class: 'ast-checkbox',
+        class: 'ast-switch',
 
         '[attr.data-size]': 'size()',
+        '[attr.data-show-icons]': 'showIcons() || null',
 
-        '[style.--ast-check-icon]': 'checkIcon',
-        '[style.--ast-minus-icon]': 'minusIcon'
+        '[style.--ast-check-icon]': 'checkIcon'
     }
 })
-export class CheckboxDirective {
+export class SwitchDirective {
     private readonly iconResolver = inject(AST_ICON_RESOLVER);
 
     protected readonly checkIcon = `url("${this.iconResolver('@ast.check')}")`;
 
-    protected readonly minusIcon = `url("${this.iconResolver('@ast.minus')}")`;
-
-    readonly size = input<CheckboxSize>('l');
+    readonly size = input<SwitchSize>('m');
+    readonly showIcons = input(true);
 }

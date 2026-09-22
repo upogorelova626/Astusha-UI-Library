@@ -5,6 +5,7 @@ import {StatusComponent} from './components/status/status.component';
 import {RadioComponent} from './form/radio/radio/radio.component';
 import {SwitchComponent} from './form/switch/switch/switch.component';
 import {CheckboxComponent} from './form/checkbox/checkbox/checkbox.component';
+import {InputComponent} from './form/inputs/input/input/input.component';
 
 @Component({
     selector: 'app-root',
@@ -14,7 +15,8 @@ import {CheckboxComponent} from './form/checkbox/checkbox/checkbox.component';
         StatusComponent,
         RadioComponent,
         SwitchComponent,
-        CheckboxComponent
+        CheckboxComponent,
+        InputComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.less'

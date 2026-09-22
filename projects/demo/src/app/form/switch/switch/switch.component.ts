@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {SwitchDirective} from 'astusha-ui';
 
 @Component({
     selector: 'app-switch',
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, SwitchDirective],
     templateUrl: './switch.component.html',
     styleUrl: './switch.component.less'
 })

@@ -1,27 +1,20 @@
 import {Directive, input} from '@angular/core';
+import {AppearanceDirective} from '../../../directives/appearance.directive';
 
 type ButtonSize = 'xs' | 's' | 'm' | 'l';
 
-type Appearance =
-    | 'primary'
-    | 'secondary'
-    | 'flat'
-    | 'accent'
-    | 'soft'
-    | 'tinted'
-    | 'danger';
-
 @Directive({
     selector: 'button[astButton], a[astButton]',
+    hostDirectives: [{directive: AppearanceDirective, inputs: ['appearance']}],
+
     host: {
         class: 'ast-button',
 
-        '[attr.data-size]': 'size()',
-        '[attr.data-appearance]': 'appearance()'
+        '[attr.data-size]': 'size()'
     }
 })
 export class ButtonDirective {
-    readonly appearance = input<Appearance>('primary');
-
     readonly size = input<ButtonSize>('m');
+
+    readonly invalid = input(false);
 }
