@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "ng serve demo",
+    "build": "npm run build:libs && npm run build:demo",
+    "watch": "ng build demo --watch --configuration development",
+    "test": "ng test",
+    "build:libs": "ng build cdk && ng build core && ng build kit && ng build astusha-ui",
+    "build:demo": "ng build demo"
   },
   "private": true,
   "dependencies": {

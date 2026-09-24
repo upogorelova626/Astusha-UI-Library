@@ -7,7 +7,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -31,10 +31,10 @@ ng generate --help
 To build the project run:
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This builds `cdk`, `core`, `kit`, and `astusha-ui` in dependency order, then builds the demo. To build only the demo, run `npm run build:demo`. The demo resolves library imports to workspace sources so changes are available immediately during development. Build artifacts are stored in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
 ## Running unit tests
 
