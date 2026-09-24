@@ -1,0 +1,39 @@
+.ast-icons {
+    gap: var(--ast-icon-gap, 10px);
+
+    &::before,
+    &::after {
+        content: '';
+
+        display: none;
+
+        width: var(--ast-icon-size, 1.5em);
+        height: var(--ast-icon-size, 1.5em);
+
+        flex-shrink: 0;
+
+        background-color: currentColor;
+
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+    }
+
+    &[data-icon-start]::before {
+        display: block;
+
+        mask-image: var(--ast-icon-start);
+        -webkit-mask-image: var(--ast-icon-start);
+    }
+
+    &[data-icon-end]::after {
+        display: block;
+
+        mask-image: var(--ast-icon-end);
+        -webkit-mask-image: var(--ast-icon-end);
+    }
+}

@@ -1,13 +1,18 @@
-//buttons
-
-export * from './lib/components/button/button/button.directive';
-
-export * from './lib/components/button/appearance-focus/appearance-focus.directive';
-
-export * from './lib/components/button/appearance-state/appearance-state.directive';
+//directives
 
 export * from './lib/directives/appearance.directive';
 export * from './lib/directives/control-state.directive';
+export * from './lib/directives/icons.directive';
+
+//buttons
+
+//button
+
+export * from './lib/components/button/button/button.directive';
+
+//buttonX
+
+export * from './lib/components/buttons/ButtonX/button-x.directive';
 
 //inputs
 
