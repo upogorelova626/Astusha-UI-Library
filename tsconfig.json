@@ -6,6 +6,15 @@
     "paths": {
       "astusha-ui": [
         "./dist/astusha-ui"
+      ],
+      "cdk": [
+        "./dist/cdk"
+      ],
+      "core": [
+        "./dist/core"
+      ],
+      "kit": [
+        "./dist/kit"
       ]
     },
     "outDir": "./dist/out-tsc",
