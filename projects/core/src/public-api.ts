@@ -1,5 +1,6 @@
 // Components
 export * from './lib/components/button/button.directive';
+export * from './lib/components/buttons/buttonX/button-x.directive';
 
 // Toggles
 export * from './lib/components/inputs/toggles/radio/radio.directive';
