@@ -1,5 +1,5 @@
 import {Directive, inject, input} from '@angular/core';
-import {AppearanceDirective, AST_ICON_RESOLVER} from '../../../../public-api';
+import {AST_ICON_RESOLVER, AppearanceDirective} from 'core';
 
 @Directive({
     selector: 'button[astButtonX]',

@@ -1,5 +1,5 @@
 // Components
-export * from './lib/components/button/button.directive';
+export * from './lib/components/buttons/button/button.directive';
 export * from './lib/components/buttons/buttonX/button-x.directive';
 
 // Toggles

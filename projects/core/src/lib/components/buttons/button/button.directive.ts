@@ -1,6 +1,6 @@
 import {Directive, input} from '@angular/core';
-import {AppearanceDirective} from '../../directives/appearance/appearance.directive';
-import {IconsDirective} from '../../directives/icons/icons.directive';
+import {AppearanceDirective} from '../../../../public-api';
+import {IconsDirective} from '../../../../public-api';
 
 type ButtonSize = 'xs' | 's' | 'm' | 'l';
 
