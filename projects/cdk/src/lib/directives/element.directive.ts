@@ -5,5 +5,5 @@ import {Directive, ElementRef, inject} from '@angular/core';
     exportAs: 'astElement'
 })
 export class ElementDirective {
-    readonly elementRef = inject(ElementRef);
+    readonly elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
 }
