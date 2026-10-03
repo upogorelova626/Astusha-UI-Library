@@ -24,7 +24,9 @@
     border-radius: 96px;
 
     &[data-size='s'] {
-        block-size: 16px;
+        --ast-badge-size: 16px;
+
+        block-size: var(--ast-badge-size);
         padding: 1px 4px;
 
         font-size: 11px;
@@ -32,7 +34,9 @@
     }
 
     &[data-size='m'] {
-        block-size: 20px;
+        --ast-badge-size: 20px;
+
+        block-size: var(--ast-badge-size);
         padding: 1px 6px;
 
         font-size: 14px;
@@ -40,7 +44,9 @@
     }
 
     &[data-size='l'] {
-        block-size: 24px;
+        --ast-badge-size: 24px;
+
+        block-size: var(--ast-badge-size);
         padding: 1px 8px;
 
         font-size: 14px;
@@ -48,7 +54,9 @@
     }
 
     &[data-size='xl'] {
-        block-size: 32px;
+        --ast-badge-size: 32px;
+
+        block-size: var(--ast-badge-size);
         padding: 1px 12px;
 
         font-size: 16px;
@@ -57,51 +65,72 @@
 
     &:empty {
         inline-size: var(--ast-badge-size);
+        padding: 0;
+
         aspect-ratio: 1;
+
         border-radius: 50%;
     }
 
     &[data-appearance='default'] {
+        --ast-status: var(--ast-background-base);
+
         color: var(--ast-background-base);
         background: #959595;
     }
 
     &[data-appearance='accent'] {
+        --ast-status: var(--ast-text-primary-on-accent-2);
+
         color: var(--ast-text-primary-on-accent-2);
         background: var(--ast-background-accent-2);
     }
 
     &[data-appearance='primary'] {
+        --ast-status: var(--ast-text-primary-on-accent-1);
+
         color: var(--ast-text-primary-on-accent-1);
         background: var(--ast-background-accent-1);
     }
 
     &[data-appearance='positive'] {
+        --ast-status: var(--ast-status-positive);
+
         color: var(--ast-text-primary);
         background: var(--ast-status-positive-pale);
     }
 
     &[data-appearance='negative'] {
+        --ast-status: var(--ast-status-negative);
+
         color: var(--ast-text-primary);
         background: var(--ast-status-negative-pale);
     }
 
     &[data-appearance='warning'] {
+        --ast-status: var(--ast-status-warning);
+
         color: var(--ast-text-primary);
         background: var(--ast-status-warning-pale);
     }
 
     &[data-appearance='info'] {
+        --ast-status: var(--ast-status-info);
+
         color: var(--ast-text-primary);
         background: var(--ast-status-info-pale);
     }
 
     &[data-appearance='neutral'] {
+        --ast-status: var(--ast-status-neutral);
+
         color: var(--ast-text-primary);
         background: var(--ast-background-neutral-1);
     }
 
     &[data-appearance='custom'] {
+        --ast-status: var(--ast-badge-status, var(--ast-background-base));
+
         color: var(--ast-background-base);
         background: #959595;
     }

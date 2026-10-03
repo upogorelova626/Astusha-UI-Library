@@ -1,0 +1,38 @@
+.ast-status {
+    display: inline-flex;
+    align-items: center;
+
+    &::before {
+        content: '';
+
+        display: block;
+
+        inline-size: var(--ast-status-size);
+        block-size: var(--ast-status-size);
+
+        flex-shrink: 0;
+
+        border-radius: 50%;
+        background: var(--ast-status);
+    }
+
+    &[data-size='s'] {
+        --ast-status-size: 4.5px;
+        gap: 4px;
+    }
+
+    &[data-size='m'] {
+        --ast-status-size: 6px;
+        gap: 4px;
+    }
+
+    &[data-size='l'] {
+        --ast-status-size: 8px;
+        gap: 4px;
+    }
+
+    &[data-size='xl'] {
+        --ast-status-size: 8px;
+        gap: 6px;
+    }
+}
