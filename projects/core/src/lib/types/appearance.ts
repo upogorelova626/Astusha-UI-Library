@@ -1,4 +1,5 @@
 export type AstAppearance =
+    | ''
     | 'primary'
     | 'primary-destructive'
     | 'primary-grayscale'
