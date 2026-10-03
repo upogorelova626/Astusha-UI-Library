@@ -1,0 +1,108 @@
+.ast-badge {
+    --ast-icon-size: 1em;
+    --ast-icon-gap: 0.25rem;
+
+    display: inline-flex;
+    box-sizing: border-box;
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    inline-size: fit-content;
+    max-inline-size: 100%;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    vertical-align: middle;
+
+    font: inherit;
+
+    border-radius: 96px;
+
+    &[data-size='s'] {
+        block-size: 16px;
+        padding: 1px 4px;
+
+        font-size: 11px;
+        line-height: 12px;
+    }
+
+    &[data-size='m'] {
+        block-size: 20px;
+        padding: 1px 6px;
+
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &[data-size='l'] {
+        block-size: 24px;
+        padding: 1px 8px;
+
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &[data-size='xl'] {
+        block-size: 32px;
+        padding: 1px 12px;
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &:empty {
+        inline-size: var(--ast-badge-size);
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    &[data-appearance='default'] {
+        color: var(--ast-background-base);
+        background: #959595;
+    }
+
+    &[data-appearance='accent'] {
+        color: var(--ast-text-primary-on-accent-2);
+        background: var(--ast-background-accent-2);
+    }
+
+    &[data-appearance='primary'] {
+        color: var(--ast-text-primary-on-accent-1);
+        background: var(--ast-background-accent-1);
+    }
+
+    &[data-appearance='positive'] {
+        color: var(--ast-text-primary);
+        background: var(--ast-status-positive-pale);
+    }
+
+    &[data-appearance='negative'] {
+        color: var(--ast-text-primary);
+        background: var(--ast-status-negative-pale);
+    }
+
+    &[data-appearance='warning'] {
+        color: var(--ast-text-primary);
+        background: var(--ast-status-warning-pale);
+    }
+
+    &[data-appearance='info'] {
+        color: var(--ast-text-primary);
+        background: var(--ast-status-info-pale);
+    }
+
+    &[data-appearance='neutral'] {
+        color: var(--ast-text-primary);
+        background: var(--ast-background-neutral-1);
+    }
+
+    &[data-appearance='custom'] {
+        color: var(--ast-background-base);
+        background: #959595;
+    }
+}

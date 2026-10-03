@@ -18,11 +18,11 @@ export class IconsDirective {
     private readonly iconResolver = inject(AST_ICON_RESOLVER);
 
     readonly iconStart = input<string | null>(null, {
-        alias: 'astIconStart'
+        alias: 'iconStart'
     });
 
     readonly iconEnd = input<string | null>(null, {
-        alias: 'astIconEnd'
+        alias: 'iconEnd'
     });
 
     protected readonly startIcon = computed(() => {

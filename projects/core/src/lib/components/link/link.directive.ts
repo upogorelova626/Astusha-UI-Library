@@ -6,7 +6,7 @@ import {IconsDirective} from '../../directives/icons/icons.directive';
     selector: 'a[astLink], button[astLink]',
     hostDirectives: [
         {directive: AppearanceDirective, inputs: ['appearance']},
-        {directive: IconsDirective, inputs: ['astIconStart', 'astIconEnd']}
+        {directive: IconsDirective, inputs: ['iconStart', 'iconEnd']}
     ],
 
     host: {class: 'ast-link'}

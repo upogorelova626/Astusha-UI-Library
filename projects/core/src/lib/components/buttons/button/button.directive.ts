@@ -8,7 +8,7 @@ type ButtonSize = 'xs' | 's' | 'm' | 'l';
     selector: 'button[astButton], a[astButton]',
     hostDirectives: [
         {directive: AppearanceDirective, inputs: ['appearance']},
-        {directive: IconsDirective, inputs: ['astIconStart', 'astIconEnd']}
+        {directive: IconsDirective, inputs: ['iconStart', 'iconEnd']}
     ],
 
     host: {
