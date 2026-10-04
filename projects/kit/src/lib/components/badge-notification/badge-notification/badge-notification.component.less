@@ -1,0 +1,69 @@
+:host {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    max-inline-size: 100%;
+
+    color: var(--ast-text-primary-on-accent-1);
+    background-color: var(--ast-status-negative);
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    &[data-size='l'] {
+        --ast-badge-size: 24px;
+
+        block-size: var(--ast-badge-size);
+        min-inline-size: var(--ast-badge-size);
+
+        padding: 1px 5px;
+
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &[data-size='m'] {
+        --ast-badge-size: 20px;
+
+        block-size: var(--ast-badge-size);
+        min-inline-size: var(--ast-badge-size);
+
+        padding: 1px 4px;
+
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &[data-size='s'] {
+        --ast-badge-size: 16px;
+
+        block-size: var(--ast-badge-size);
+        min-inline-size: var(--ast-badge-size);
+
+        padding: 1px 2px;
+
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &[data-size='xs'] {
+        --ast-badge-size: 6px;
+
+        block-size: var(--ast-badge-size);
+        min-inline-size: var(--ast-badge-size);
+
+        padding: 0;
+
+        font-size: 0;
+        line-height: 0;
+    }
+}
