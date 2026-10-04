@@ -1,70 +1,89 @@
 .ast-badge {
-    --ast-icon-size: 1em;
+    --ast-badge-size: var(--ast-height-xs);
+    --ast-badge-padding: 0.5rem;
+
+    --ast-icon-size: 1rem;
     --ast-icon-gap: 0.25rem;
 
+    --ast-status-size: 0.375rem;
+
     display: inline-flex;
-    box-sizing: border-box;
     position: relative;
 
     align-items: center;
     justify-content: center;
 
+    box-sizing: border-box;
     flex-shrink: 0;
 
     inline-size: fit-content;
-    max-inline-size: 100%;
+    min-inline-size: var(--ast-badge-size);
+
+    block-size: var(--ast-badge-size);
+
+    padding: 0.0625rem var(--ast-badge-padding);
 
     overflow: hidden;
 
     white-space: nowrap;
     vertical-align: middle;
 
-    font: inherit;
+    font: var(--ast-typography-ui-s);
 
-    border-radius: 96px;
+    border-radius: 6rem;
 
     &[data-size='s'] {
-        --ast-badge-size: 16px;
+        --ast-badge-size: 1rem;
+        --ast-badge-padding: 0.25rem;
 
-        block-size: var(--ast-badge-size);
-        padding: 1px 4px;
+        --ast-icon-size: 0.625rem;
+        --ast-icon-gap: 0.1875rem;
 
-        font-size: 11px;
-        line-height: 12px;
+        --ast-status-size: 0.25rem;
+
+        font: var(--ast-typography-ui-2xs);
     }
 
     &[data-size='m'] {
-        --ast-badge-size: 20px;
+        --ast-badge-size: 1.25rem;
+        --ast-badge-padding: 0.375rem;
 
-        block-size: var(--ast-badge-size);
-        padding: 1px 6px;
+        --ast-icon-size: 0.75rem;
+        --ast-icon-gap: 0.25rem;
 
-        font-size: 14px;
-        line-height: 16px;
+        --ast-status-size: 0.375rem;
+
+        font: var(--ast-typography-ui-s);
     }
 
     &[data-size='l'] {
-        --ast-badge-size: 24px;
+        --ast-badge-size: var(--ast-height-xs);
+        --ast-badge-padding: 0.5rem;
 
-        block-size: var(--ast-badge-size);
-        padding: 1px 8px;
+        --ast-icon-size: 1rem;
+        --ast-icon-gap: 0.25rem;
 
-        font-size: 14px;
-        line-height: 16px;
+        --ast-status-size: 0.375rem;
+
+        font: var(--ast-typography-ui-s);
     }
 
     &[data-size='xl'] {
-        --ast-badge-size: 32px;
+        --ast-badge-size: var(--ast-height-s);
+        --ast-badge-padding: 0.75rem;
 
-        block-size: var(--ast-badge-size);
-        padding: 1px 12px;
+        --ast-icon-size: 1rem;
+        --ast-icon-gap: 0.25rem;
 
-        font-size: 16px;
-        line-height: 20px;
+        --ast-status-size: 0.5rem;
+
+        font: var(--ast-typography-ui-m);
     }
 
     &:empty {
         inline-size: var(--ast-badge-size);
+        min-inline-size: var(--ast-badge-size);
+
         padding: 0;
 
         aspect-ratio: 1;
@@ -132,6 +151,6 @@
         --ast-status: var(--ast-badge-status, var(--ast-background-base));
 
         color: var(--ast-background-base);
-        background: #959595;
+        background: var(--ast-badge-background, #959595);
     }
 }

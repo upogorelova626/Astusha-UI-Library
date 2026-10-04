@@ -1,0 +1,59 @@
+:root,
+:host {
+    --ast-typography-family-text: 'Manrope', system-ui, sans-serif;
+    --ast-typography-family-display: 'Manrope', system-ui, sans-serif;
+
+    --ast-font-offset: calc(var(--ast-font-offset-value, 0) * 1px);
+    --ast-font-scale: calc((22 + var(--ast-font-offset-value, 0)) / 22);
+
+    // Headings
+
+    --ast-typography-heading-h1: bold calc(var(--ast-font-offset) + 3.125rem) /
+        1.12 var(--ast-typography-family-display);
+
+    --ast-typography-heading-h2: bold calc(var(--ast-font-offset) + 2.75rem) /
+        calc(48 / 44) var(--ast-typography-family-display);
+
+    --ast-typography-heading-h3: bold calc(var(--ast-font-offset) + 2.25rem) /
+        calc(40 / 36) var(--ast-typography-family-display);
+
+    --ast-typography-heading-h4: bold calc(var(--ast-font-offset) + 1.75rem) /
+        calc(32 / 28) var(--ast-typography-family-display);
+
+    --ast-typography-heading-h5: bold calc(var(--ast-font-offset) + 1.5rem) /
+        calc(28 / 24) var(--ast-typography-family-display);
+
+    --ast-typography-heading-h6: bold calc(var(--ast-font-offset) + 1.25rem) /
+        calc(24 / 20) var(--ast-typography-family-display);
+
+    // Body
+
+    --ast-typography-body-l: normal calc(var(--ast-font-offset) + 1.0625rem) /
+        calc(28 / 17) var(--ast-typography-family-text);
+
+    --ast-typography-body-m: normal calc(var(--ast-font-offset) + 1rem) / 1.5
+        var(--ast-typography-family-text);
+
+    --ast-typography-body-s: normal calc(var(--ast-font-offset) + 0.875rem) /
+        calc(20 / 14) var(--ast-typography-family-text);
+
+    --ast-typography-body-xs: normal calc(var(--ast-font-offset) + 0.75rem) /
+        calc(16 / 12) var(--ast-typography-family-text);
+
+    // UI
+
+    --ast-typography-ui-l: normal calc(var(--ast-font-offset) + 1.0625rem) /
+        calc(24 / 17) var(--ast-typography-family-text);
+
+    --ast-typography-ui-m: normal calc(var(--ast-font-offset) + 1rem) / 1.25
+        var(--ast-typography-family-text);
+
+    --ast-typography-ui-s: normal calc(var(--ast-font-offset) + 0.875rem) /
+        calc(16 / 14) var(--ast-typography-family-text);
+
+    --ast-typography-ui-xs: normal calc(var(--ast-font-offset) + 0.75rem) / 1.25
+        var(--ast-typography-family-text);
+
+    --ast-typography-ui-2xs: normal calc(var(--ast-font-offset) + 0.6875rem) /
+        calc(12 / 11) var(--ast-typography-family-text);
+}
